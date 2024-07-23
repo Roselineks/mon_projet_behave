@@ -1,12 +1,18 @@
 from behave import given, when, then
 
+import logging
+
 @given('the login page is displayed')
 def step_impl(context):
     try:
         context.browser.login('ricacegos@gmail.com', 'Roibcaan1')
-        print("Connexion faite avec succès")
+        logging.info("connexion faite avec succès")
+        #print("Connexion faite avec succès")
+        
     except Exception as e:
-        print(f"Erreur de connexion : {e}")
+       # print(f"Erreur de connexion : {e}")
+       logging.info(f"Erreur de connexion :'{e}")
+    
 
 @when('a user logs in with username "{username}" and password "{password}"')
 def step_impl(context, username, password):

@@ -1,6 +1,9 @@
 from selenium import webdriver
 from browser_actions import Cdiscount
 
+import logging 
+logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
+
 def before_all(context):
     print("Initialisation du WebDriver")
     context.browser = Cdiscount()
